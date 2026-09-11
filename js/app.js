@@ -1,9 +1,8 @@
 // Criando variável para armazenar o valor total do carrinho
-let total = 0;
+let total;
 
-// Limpando o produto e valor que já veio fixado no HTML
-document.getElementById("lista-produtos").innerHTML = "";
-document.getElementById("valor-total").textContent = "R$0,00";
+//Chamando a função limpar para inicializar o carrinho
+limpar();
 
 //Criar função para adicionar produtos ao carrinho
 function adicionar() {
@@ -31,20 +30,13 @@ function adicionar() {
         </section>
     `;
     quantidade = Number(document.getElementById("quantidade").value = 0);
-    
+
    // Atualizar o total na tela
    document.getElementById("valor-total").textContent = `R$${total.toFixed(2)}`;
 }
 //Criando função para limpar o carrinho
 function limpar() {
-    // Recuperar a lista de produtos do carrinho
-    let listaProdutos = document.getElementById("lista-produtos");
-    // Limpar a lista de produtos
-    listaProdutos.innerHTML = "";
-    // Recuperar o elemento que mostra o valor total
-    let valorTotalCarrinho = document.getElementById("valor-total");
-    // Atualizar o valor total
-    valorTotalCarrinho.textContent = "R$0,00";
-    // Resetar o total
+    document.getElementById("lista-produtos").innerHTML = "";
+    document.getElementById("valor-total").textContent = "R$0,00";
     total = 0;
 }
